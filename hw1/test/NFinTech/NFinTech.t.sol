@@ -357,6 +357,7 @@ contract NFinTechTest is Test {
 
 contract MockSuccessReceiver is IERC721TokenReceiver {
     function onERC721Received(address, address, uint256, bytes calldata) external returns (bytes4) {
+        //return bytes4((keccak256("onERC721Received(address,address,uint256,bytes)")));
         return IERC721TokenReceiver.onERC721Received.selector;
     }
 }
